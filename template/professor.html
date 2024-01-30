@@ -1,0 +1,81 @@
+{% extends "header.html" %}
+{% load static %}
+
+{% block content %}
+
+<h2>Professor Content<h2>
+
+    <!doctype html>
+
+    <html lang="en"> 
+    
+     <head> 
+    
+      <meta charset="UTF-8"> 
+    
+      {% block title %} <title>Professor</title> {% endblock %} 
+    
+      <link rel="stylesheet" href="./style.css"> 
+    
+     </head> 
+    <h2 id="prerna">prerna</h2>
+     <body> <!-- partial:index.partial.html --> 
+    
+      <section> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
+    
+       <div class="signin"> 
+        <div class="content"> 
+         <form method="post" enctype="multipart/form-data">
+         <div class="form"> 
+            {% csrf_token %}
+          <div class="inputBox"> 
+           <input type="text" name="username" required> <i>Username</i> 
+          </div> 
+          <div class="inputBox"> 
+            <input type="text" name="fname" required> <i>First Name</i> 
+           </div> 
+           <div class="inputBox"> 
+     
+            <input type="text" name="lname" required> <i>Last Name</i> 
+     
+           </div> 
+     
+          <div class="inputBox"> 
+    
+           <input type="text" name="email" required> <i>Email</i> 
+    
+          </div> 
+    
+                <div class="inputBox"> 
+           <input type="text" name="phone" required> <i>Phone</i> 
+          </div> 
+
+          <div class="inputBox"> 
+            <input type="file" name="image" required> <i>Profile</i> 
+           </div> 
+           
+
+          <div class="inputBox"> 
+    
+           <input type="password" name="passs" required> <i>Password</i> 
+    
+          </div> 
+    
+          <div class="links"> <a href="#">Forgot Password</a> <a href="#">Login</a> 
+    
+          </div> 
+    
+          <div class="inputBox"> 
+    
+           <input type="submit" value="Singup"> 
+          </div> 
+         </div> 
+        </div>
+    </form> 
+       </div> 
+      </section> <!-- partial --> 
+     </body>
+    </html>
+
+
+{% endblock %}

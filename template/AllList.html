@@ -1,0 +1,87 @@
+{% extends "header.html" %}
+{% load static %}
+
+{% block content %}
+
+
+
+<h2>All Database Records</h2>
+
+ {% if request.user.user_type == 'director' %}
+<h3 style="color:red; margin:10px;">Professor Records</h3>
+<table border="3" style="margin:20px;">
+    <tr>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>User Type</th>
+      <th>Profile</th>
+      <th>Actions</th>
+    </tr>
+    {% for prof in profs %}
+    <tr>
+      <td>{{prof.username}}</td>
+      <td>{{prof.email}}</td>
+
+      <td>{{prof.phone}}</td>
+      <td>{{prof.user_type}}</td>
+      <td><img src="{{prof.profile.url}}" alt="" height=100 width=100 /></td>
+      <td><a href ="{% url 'getProfile' %}">View</a></td>
+
+    </tr>
+  {% endfor %}
+  </table>
+
+  <h3 style="color:red; margin:10px;">Student Records</h3>
+<table border="3" style="margin:20px;">
+    <tr>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>User Type</th>
+      <th>Profile</th>
+      <th>Actions</th>
+    </tr>
+    {% for stud in studs %}
+    <tr>
+      <td>{{stud.username}}</td>
+      <td>{{stud.email}}</td>
+
+      <td>{{stud.phone}}</td>
+      <td>{{stud.user_type}}</td>
+      <td><img src="{{stud.profile.url}}" alt="" height=100 width=100 /></td>
+      <td><a href ="{% url 'getProfile' %}">View</a></td>
+
+    </tr>
+  {% endfor %}
+  </table>
+  
+  {% else %}
+
+  <h3 style="color:red; margin:10px;">Student Records</h3>
+<table border="3" style="margin:20px;">
+    <tr>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>User Type</th>
+      <th>Profile</th>
+      <th>Actions</th>
+    </tr>
+    {% for stud in studs %}
+    <tr>
+      <td>{{stud.username}}</td>
+      <td>{{stud.email}}</td>
+
+      <td>{{stud.phone}}</td>
+      <td>{{stud.user_type}}</td>
+      <td><img src="{{stud.profile.url}}" alt="" height=100 width=100 /></td>
+      <td><a href ="{% url 'getProfile' %}">View</a></td>
+
+    </tr>
+  {% endfor %}
+  </table>
+
+{% endif %}
+
+{% endblock %}

@@ -13,5 +13,4 @@ class CustomUser(AbstractUser):# jo User table me phle fields thi uske sath ab y
 
 
 
-### there are two ways to store images/files static / media folder
     

@@ -1,0 +1,65 @@
+{% extends 'header.html' %}
+{% load static %}
+
+{% block content %}
+
+
+
+
+<body style="margin:20px; "> <!-- partial:index.partial.html --> 
+    
+    <section> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
+  
+     <div class="signin"> 
+      <div class="content"> 
+       <form method="post" enctype="multipart/form-data">
+       <div class="form"> 
+          {% csrf_token %}
+        <div class="inputBox"> 
+         <input type="text" name="username" value="{{user.username}}" required> <i>Username</i> 
+        </div> 
+        <div class="inputBox"> 
+          <input type="text" name="fname" value="{{user.first_name}}" required> <i>First Name</i> 
+         </div> 
+         <div class="inputBox"> 
+   
+          <input type="text" name="lname" value="{{user.last_name}}" required> <i>Last Name</i> 
+   
+         </div> 
+   
+        <div class="inputBox"> 
+  
+         <input type="text" name="email" value="{{user.email}}" required> <i>Email</i> 
+  
+        </div> 
+  
+              <div class="inputBox"> 
+         <input type="text" name="phone" value ="{{user.phone}}" required> <i>Phone</i> 
+        </div> 
+        <div class="inputBox"> 
+            <img src="{{user.profile.url}}" width=200 height=100 >
+        </div> 
+           
+
+        <div class="inputBox"> 
+          <input type="file" name="image" required> <i>Profile</i> 
+         </div> 
+
+  
+        </div> 
+  
+        <div style="margin-top:20px;" class="inputBox"> 
+            <a href="{% url 'header' %}"><input type="button"  value="Back"></a> 
+
+         <input type="submit" value="Update"> 
+        </div> 
+       </div> 
+      </div>
+  </form> 
+     </div> 
+    </section> <!-- partial --> 
+   </body>
+  </html>
+
+{% endblock %}
+

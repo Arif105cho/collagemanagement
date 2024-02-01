@@ -10,7 +10,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"> {% endcomment %}
     {% block title%}
     <title>Management</title>
     {% endblock %}
@@ -19,6 +19,9 @@
   </head>
   <body>
 
+
+
+    {% if request.user.user_type == 'director' %}
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Collage</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,8 +32,13 @@
         <li class="nav-item active">
           <a class="nav-link" href="{% url 'prof' %}">Professor <span class="sr-only">(current)</span></a>
         </li>
+
         <li class="nav-item active">
           <a class="nav-link" href="#">Student</a>
+        </li>
+        
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'all_list' %}">All Records</a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="#">Gallary Images</a>
@@ -41,6 +49,34 @@
       </ul>
     </div>
   </nav>
+
+  {% else %}
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Collage</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        
+
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Student</a>
+        </li>
+        
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'all_list' %}">All Records</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Gallary Images</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">{{request.user}}</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  {% endif %}
   
 {% block content %}
 

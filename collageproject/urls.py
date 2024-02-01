@@ -18,9 +18,15 @@ from django.contrib import admin
 from django.urls import path
 #all views functions/methods from Application.
 from application import views
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("",views.HeaderView,name="header"),
-    path("prof",views.ProfessorView,name="prof")
-]
+    path("prof",views.ProfessorView,name="prof"),
+    path('list',views.ProfessorListView,name="all_list"),
+    path('login',views.loginView,name="login"),
+    path('get',views.getProfessor,name="getProfile")
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
